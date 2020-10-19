@@ -1,5 +1,5 @@
 function printMessage(msg){
-	var div = document.createElement('div');
+	const div = document.createElement('div');
 	div.innerHTML = msg;
 	document.getElementById('messages').appendChild(div);
 }
@@ -9,7 +9,8 @@ function clearMessages(){
 }
 
 
-var argButtonName, buttonTest;
+let argButtonName,
+	buttonTest;
 
 /**
  * Describe this function...
@@ -18,7 +19,8 @@ function buttonClicked(argButtonName) {
   clearMessages();
   console.log(argButtonName + ' został kliknięty');
 
-  var computerMove, randomNumber;
+  let computerMove,
+   	randomNumber;
   randomNumber = Math.floor(Math.random() * 3 + 1);
   console.log('wylosowana liczba to: ' + randomNumber);
   if (randomNumber == '1') {
@@ -30,7 +32,7 @@ function buttonClicked(argButtonName) {
   }
   printMessage('Mój ruch: ' + computerMove);
 
-  var playerInput, playerMove;
+  let playerInput, playerMove;
   playerMove = argButtonName;
   console.log('Wpisana odpowiedź to: ' + playerInput);
   if (playerInput == '1') {
@@ -45,7 +47,7 @@ function buttonClicked(argButtonName) {
   }
   printMessage('Twój ruch: ' + playerMove);
 
-  var argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput;
+  let argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput;
 
   /**
    * Describe this function...
@@ -115,9 +117,21 @@ buttonScissors.addEventListener('click', function(){ buttonClicked('Guzik NOŻYC
 
 
 
-var computerMove; {
+const computerMove; {
         computerMove = 'kamień';
         printMessage('Zagrałem ' + computerMove + '! Jeśli Twój ruch to papier, to wygrywasz!');
         computerMove = 'papier ';
         printMessage('Zagrałem ' + computerMove + '! Jeśli Twój ruch to nożyce ');
 }
+function getSubtraction(a, b) {
+  let result = a - b;
+
+  if(result < 0){
+    let multiplier = -1;
+    result = result * multiplier;
+  }
+
+  return result;
+}
+
+console.log( getSubtraction(5, 7) );
